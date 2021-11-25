@@ -1,0 +1,17 @@
+- name: db-postgres
+  kind: postgres
+  configuration:
+    connection_info:
+      database_url: postgres://postgres:postgrespassword@host.docker.internal:5432/postgres
+      isolation_level: read-committed
+      use_prepared_statements: false
+  tables: "!include db-postgres/tables/tables.yaml"
+- name: db-sql-server
+  kind: mssql
+  configuration:
+    connection_info:
+      connection_string: DRIVER={ODBC Driver 17 for SQL Server};SERVER=host.docker.internal,1433;Uid=SA;Pwd=testPassword123;Encrypt=no
+      pool_settings:
+        idle_timeout: 5
+        max_connections: 50
+  tables: "!include db-sql-server/tables/tables.yaml"

@@ -1,0 +1,146 @@
+type Albums {
+  id: ID!
+  title: String!
+  artist_id: ID!
+}
+extend type Albums {
+  # artist_id
+  artist: Artist!
+}
+
+type Artists {
+  id: ID!
+  name: String
+}
+extend type Artists {
+  # albums.artist_id
+  albums: [Albums!]
+}
+
+type Customers {
+  id: ID!
+  first_name: String!
+  last_name: String!
+  company: String
+  address: String
+  city: String
+  state: String
+  country: String
+  postal_code: String
+  phone: String
+  fax: String
+  email: String!
+  support_rep_id: ID
+}
+extend type Customers {
+  # support_rep_id
+  support_rep: Employee
+}
+
+type Employees {
+  id: ID!
+  last_name: String!
+  first_name: String!
+  title: String
+  reports_to: Int
+  address: String
+  city: String
+  state: String
+  country: String
+  postal_code: String
+  phone: String
+  fax: String
+  email: String
+}
+extend type Employee {
+  # reports_to
+  manager: Employee
+  # customer.support_rep_id
+  customers: [Customer!]
+}
+
+type Genres {
+  id: ID!
+  name: String
+}
+
+type Invoices {
+  id: ID!
+  customer_id: ID!
+  billing_address: String
+  billing_city: String
+  billing_state: String
+  billing_country: String
+  billing_postal_code: String
+  total: Float!
+}
+extend type Invoices {
+  # customer_id
+  customer: Customer!
+  # invoice_lines.invoice_id
+  invoice_lines: [InvoiceLines]
+}
+
+type InvoiceLines {
+  id: ID!
+  invoice_id: ID!
+  track_id: ID!
+  unit_price: Float!
+  quantity: Int!
+}
+extend type InvoiceLines {
+  # invoice_id
+  invoice: Invoices!
+  # track_id
+  track: Track!
+}
+
+type MediaTypes {
+  id: ID!
+  name: String
+}
+
+type Playlists {
+  id: ID!
+  name: String
+}
+extend type Playlists {
+  # playlist_track.playlist_id
+  playlist_tracks: [PlaylistTrack]
+}
+
+type PlaylistTrack {
+  playlist_id: ID!
+  track_id: ID!
+}
+extend type PlaylistTrack {
+  # playlist_id
+  playlist: Playlists!
+  # track_id
+  track: Tracks!
+}
+
+type Tracks {
+  id: ID!
+  name: String!
+  album_id: ID
+  media_type_id: ID!
+  genre_id: ID
+  composer: String
+  milliseconds: Int!
+  bytes: Int
+  unit_price: Float!
+}
+extend type Tracks {
+  # media_type_id
+  media_type: MediaTypes
+  # genre_id
+  genre: Genre!
+  # album_id
+  album: Album!
+
+  # playlist_track.track_id
+  playlist_tracks: [PlaylistTrack]
+  # invoice_lines.track_id
+  invoice_lines: [InvoiceLines]
+}

@@ -1,0 +1,5194 @@
+"""The root query type which gives access points into the data universe."""
+type Query {
+  """
+  Exposes the root query type nested one level down. This is helpful for Relay 1
+  which can only query top level fields if they are in a particular form.
+  """
+  query: Query!
+
+  """Reads a set of `Actor`."""
+  actorsList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Actor`."""
+    orderBy: [ActorsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: ActorCondition
+  ): [Actor!]
+
+  """Reads a set of `Album`."""
+  albumsList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Album`."""
+    orderBy: [AlbumsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AlbumCondition
+  ): [Album!]
+
+  """Reads a set of `Artist`."""
+  artistsList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Artist`."""
+    orderBy: [ArtistsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: ArtistCondition
+  ): [Artist!]
+
+  """Reads a set of `AuthGroup`."""
+  authGroupsList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `AuthGroup`."""
+    orderBy: [AuthGroupsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AuthGroupCondition
+  ): [AuthGroup!]
+
+  """Reads a set of `AuthGroupPermission`."""
+  authGroupPermissionsList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `AuthGroupPermission`."""
+    orderBy: [AuthGroupPermissionsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AuthGroupPermissionCondition
+  ): [AuthGroupPermission!]
+
+  """Reads a set of `AuthPermission`."""
+  authPermissionsList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `AuthPermission`."""
+    orderBy: [AuthPermissionsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AuthPermissionCondition
+  ): [AuthPermission!]
+
+  """Reads a set of `AuthUser`."""
+  authUsersList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `AuthUser`."""
+    orderBy: [AuthUsersOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AuthUserCondition
+  ): [AuthUser!]
+
+  """Reads a set of `AuthUserGroup`."""
+  authUserGroupsList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `AuthUserGroup`."""
+    orderBy: [AuthUserGroupsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AuthUserGroupCondition
+  ): [AuthUserGroup!]
+
+  """Reads a set of `AuthUserUserPermission`."""
+  authUserUserPermissionsList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `AuthUserUserPermission`."""
+    orderBy: [AuthUserUserPermissionsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AuthUserUserPermissionCondition
+  ): [AuthUserUserPermission!]
+
+  """Reads a set of `Category`."""
+  categoriesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Category`."""
+    orderBy: [CategoriesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: CategoryCondition
+  ): [Category!]
+
+  """Reads a set of `Customer`."""
+  customersList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Customer`."""
+    orderBy: [CustomersOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: CustomerCondition
+  ): [Customer!]
+
+  """Reads a set of `DjangoContentType`."""
+  djangoContentTypesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `DjangoContentType`."""
+    orderBy: [DjangoContentTypesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: DjangoContentTypeCondition
+  ): [DjangoContentType!]
+
+  """Reads a set of `DjangoMigration`."""
+  djangoMigrationsList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `DjangoMigration`."""
+    orderBy: [DjangoMigrationsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: DjangoMigrationCondition
+  ): [DjangoMigration!]
+
+  """Reads a set of `Employee`."""
+  employeesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Employee`."""
+    orderBy: [EmployeesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: EmployeeCondition
+  ): [Employee!]
+
+  """Reads a set of `FilmActor`."""
+  filmActorsList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `FilmActor`."""
+    orderBy: [FilmActorsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: FilmActorCondition
+  ): [FilmActor!]
+
+  """Reads a set of `FilmCategory`."""
+  filmCategoriesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `FilmCategory`."""
+    orderBy: [FilmCategoriesOrderBy!]
+  ): [FilmCategory!]
+
+  """Reads a set of `Film`."""
+  filmsList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Film`."""
+    orderBy: [FilmsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: FilmCondition
+  ): [Film!]
+
+  """Reads a set of `Genre`."""
+  genresList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Genre`."""
+    orderBy: [GenresOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: GenreCondition
+  ): [Genre!]
+
+  """Reads a set of `InvoiceLine`."""
+  invoiceLinesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `InvoiceLine`."""
+    orderBy: [InvoiceLinesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: InvoiceLineCondition
+  ): [InvoiceLine!]
+
+  """Reads a set of `Invoice`."""
+  invoicesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Invoice`."""
+    orderBy: [InvoicesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: InvoiceCondition
+  ): [Invoice!]
+
+  """Reads a set of `MediaType`."""
+  mediaTypesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `MediaType`."""
+    orderBy: [MediaTypesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MediaTypeCondition
+  ): [MediaType!]
+
+  """Reads a set of `PlaylistTrack`."""
+  playlistTracksList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `PlaylistTrack`."""
+    orderBy: [PlaylistTracksOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: PlaylistTrackCondition
+  ): [PlaylistTrack!]
+
+  """Reads a set of `Playlist`."""
+  playlistsList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Playlist`."""
+    orderBy: [PlaylistsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: PlaylistCondition
+  ): [Playlist!]
+
+  """Reads a set of `Track`."""
+  tracksList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Track`."""
+    orderBy: [TracksOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: TrackCondition
+  ): [Track!]
+  actor(id: Int!): Actor
+  album(id: Int!): Album
+  artist(id: Int!): Artist
+  authGroup(id: Int!): AuthGroup
+  authGroupByName(name: String!): AuthGroup
+  authGroupPermission(id: BigInt!): AuthGroupPermission
+  authGroupPermissionByGroupIdAndPermissionId(groupId: Int!, permissionId: Int!): AuthGroupPermission
+  authPermission(id: Int!): AuthPermission
+  authPermissionByContentTypeIdAndCodename(contentTypeId: Int!, codename: String!): AuthPermission
+  authUser(id: Int!): AuthUser
+  authUserByUsername(username: String!): AuthUser
+  authUserGroup(id: BigInt!): AuthUserGroup
+  authUserGroupByUserIdAndGroupId(userId: Int!, groupId: Int!): AuthUserGroup
+  authUserUserPermission(id: BigInt!): AuthUserUserPermission
+  authUserUserPermissionByUserIdAndPermissionId(userId: Int!, permissionId: Int!): AuthUserUserPermission
+  category(id: Int!): Category
+  customer(id: Int!): Customer
+  djangoContentType(id: Int!): DjangoContentType
+  djangoContentTypeByAppLabelAndModel(appLabel: String!, model: String!): DjangoContentType
+  djangoMigration(id: BigInt!): DjangoMigration
+  employee(id: Int!): Employee
+  filmActor(actorId: Int!, filmId: Int!): FilmActor
+  film(id: Int!): Film
+  genre(id: Int!): Genre
+  invoiceLine(id: Int!): InvoiceLine
+  invoice(id: Int!): Invoice
+  mediaType(id: Int!): MediaType
+  playlistTrack(playlistId: Int!, trackId: Int!): PlaylistTrack
+  playlist(id: Int!): Playlist
+  track(id: Int!): Track
+}
+
+type Actor {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  lastUpdate: Datetime!
+}
+
+"""
+A point in time as described by the [ISO
+8601](https://en.wikipedia.org/wiki/ISO_8601) standard. May or may not include a timezone.
+"""
+scalar Datetime
+
+"""Methods to use when ordering `Actor`."""
+enum ActorsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  LAST_NAME_ASC
+  LAST_NAME_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Actor` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input ActorCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `lastName` field."""
+  lastName: String
+}
+
+type Album {
+  id: Int!
+  title: String!
+  artistId: Int!
+
+  """Reads a single `Artist` that is related to this `Album`."""
+  artist: Artist
+
+  """Reads and enables pagination through a set of `Track`."""
+  tracksList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Track`."""
+    orderBy: [TracksOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: TrackCondition
+  ): [Track!]!
+}
+
+type Artist {
+  id: Int!
+  name: String
+
+  """Reads and enables pagination through a set of `Album`."""
+  albumsList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Album`."""
+    orderBy: [AlbumsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AlbumCondition
+  ): [Album!]!
+}
+
+"""Methods to use when ordering `Album`."""
+enum AlbumsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  ARTIST_ID_ASC
+  ARTIST_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Album` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input AlbumCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `artistId` field."""
+  artistId: Int
+}
+
+type Track {
+  id: Int!
+  name: String!
+  albumId: Int
+  mediaTypeId: Int!
+  genreId: Int
+  composer: String
+  milliseconds: Int!
+  bytes: Int
+  unitPrice: BigFloat!
+
+  """Reads a single `Album` that is related to this `Track`."""
+  album: Album
+
+  """Reads a single `MediaType` that is related to this `Track`."""
+  mediaType: MediaType
+
+  """Reads a single `Genre` that is related to this `Track`."""
+  genre: Genre
+
+  """Reads and enables pagination through a set of `InvoiceLine`."""
+  invoiceLinesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `InvoiceLine`."""
+    orderBy: [InvoiceLinesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: InvoiceLineCondition
+  ): [InvoiceLine!]!
+
+  """Reads and enables pagination through a set of `PlaylistTrack`."""
+  playlistTracksList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `PlaylistTrack`."""
+    orderBy: [PlaylistTracksOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: PlaylistTrackCondition
+  ): [PlaylistTrack!]!
+}
+
+"""
+A floating point number that requires more precision than IEEE 754 binary 64
+"""
+scalar BigFloat
+
+type MediaType {
+  id: Int!
+  name: String
+
+  """Reads and enables pagination through a set of `Track`."""
+  tracksList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Track`."""
+    orderBy: [TracksOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: TrackCondition
+  ): [Track!]!
+}
+
+"""Methods to use when ordering `Track`."""
+enum TracksOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  ALBUM_ID_ASC
+  ALBUM_ID_DESC
+  MEDIA_TYPE_ID_ASC
+  MEDIA_TYPE_ID_DESC
+  GENRE_ID_ASC
+  GENRE_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Track` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input TrackCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `albumId` field."""
+  albumId: Int
+
+  """Checks for equality with the object’s `mediaTypeId` field."""
+  mediaTypeId: Int
+
+  """Checks for equality with the object’s `genreId` field."""
+  genreId: Int
+}
+
+type Genre {
+  id: Int!
+  name: String
+
+  """Reads and enables pagination through a set of `Track`."""
+  tracksList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Track`."""
+    orderBy: [TracksOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: TrackCondition
+  ): [Track!]!
+}
+
+type InvoiceLine {
+  id: Int!
+  invoiceId: Int!
+  trackId: Int!
+  unitPrice: BigFloat!
+  quantity: Int!
+
+  """Reads a single `Invoice` that is related to this `InvoiceLine`."""
+  invoice: Invoice
+
+  """Reads a single `Track` that is related to this `InvoiceLine`."""
+  track: Track
+}
+
+type Invoice {
+  id: Int!
+  customerId: Int!
+  invoiceDate: Datetime!
+  billingAddress: String
+  billingCity: String
+  billingState: String
+  billingCountry: String
+  billingPostalCode: String
+  total: BigFloat!
+
+  """Reads a single `Customer` that is related to this `Invoice`."""
+  customer: Customer
+
+  """Reads and enables pagination through a set of `InvoiceLine`."""
+  invoiceLinesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `InvoiceLine`."""
+    orderBy: [InvoiceLinesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: InvoiceLineCondition
+  ): [InvoiceLine!]!
+}
+
+type Customer {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  company: String
+  address: String
+  city: String
+  state: String
+  country: String
+  postalCode: String
+  phone: String
+  fax: String
+  email: String!
+  supportRepId: Int
+
+  """Reads a single `Employee` that is related to this `Customer`."""
+  supportRep: Employee
+
+  """Reads and enables pagination through a set of `Invoice`."""
+  invoicesList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Invoice`."""
+    orderBy: [InvoicesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: InvoiceCondition
+  ): [Invoice!]!
+}
+
+type Employee {
+  id: Int!
+  lastName: String!
+  firstName: String!
+  title: String
+  reportsTo: Int
+  birthDate: Datetime
+  hireDate: Datetime
+  address: String
+  city: String
+  state: String
+  country: String
+  postalCode: String
+  phone: String
+  fax: String
+  email: String
+
+  """Reads a single `Employee` that is related to this `Employee`."""
+  employeeByReportsTo: Employee
+
+  """Reads and enables pagination through a set of `Customer`."""
+  customersBySupportRepIdList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Customer`."""
+    orderBy: [CustomersOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: CustomerCondition
+  ): [Customer!]!
+
+  """Reads and enables pagination through a set of `Employee`."""
+  employeesByReportsToList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `Employee`."""
+    orderBy: [EmployeesOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: EmployeeCondition
+  ): [Employee!]!
+}
+
+"""Methods to use when ordering `Customer`."""
+enum CustomersOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  SUPPORT_REP_ID_ASC
+  SUPPORT_REP_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Customer` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input CustomerCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `supportRepId` field."""
+  supportRepId: Int
+}
+
+"""Methods to use when ordering `Employee`."""
+enum EmployeesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  REPORTS_TO_ASC
+  REPORTS_TO_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Employee` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input EmployeeCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `reportsTo` field."""
+  reportsTo: Int
+}
+
+"""Methods to use when ordering `Invoice`."""
+enum InvoicesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  CUSTOMER_ID_ASC
+  CUSTOMER_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Invoice` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input InvoiceCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `customerId` field."""
+  customerId: Int
+}
+
+"""Methods to use when ordering `InvoiceLine`."""
+enum InvoiceLinesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  INVOICE_ID_ASC
+  INVOICE_ID_DESC
+  TRACK_ID_ASC
+  TRACK_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `InvoiceLine` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input InvoiceLineCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `invoiceId` field."""
+  invoiceId: Int
+
+  """Checks for equality with the object’s `trackId` field."""
+  trackId: Int
+}
+
+type PlaylistTrack {
+  playlistId: Int!
+  trackId: Int!
+
+  """Reads a single `Playlist` that is related to this `PlaylistTrack`."""
+  playlist: Playlist
+
+  """Reads a single `Track` that is related to this `PlaylistTrack`."""
+  track: Track
+}
+
+type Playlist {
+  id: Int!
+  name: String
+
+  """Reads and enables pagination through a set of `PlaylistTrack`."""
+  playlistTracksList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `PlaylistTrack`."""
+    orderBy: [PlaylistTracksOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: PlaylistTrackCondition
+  ): [PlaylistTrack!]!
+}
+
+"""Methods to use when ordering `PlaylistTrack`."""
+enum PlaylistTracksOrderBy {
+  NATURAL
+  PLAYLIST_ID_ASC
+  PLAYLIST_ID_DESC
+  TRACK_ID_ASC
+  TRACK_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `PlaylistTrack` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input PlaylistTrackCondition {
+  """Checks for equality with the object’s `playlistId` field."""
+  playlistId: Int
+
+  """Checks for equality with the object’s `trackId` field."""
+  trackId: Int
+}
+
+"""Methods to use when ordering `Artist`."""
+enum ArtistsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Artist` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input ArtistCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+}
+
+type AuthGroup {
+  id: Int!
+  name: String!
+
+  """Reads and enables pagination through a set of `AuthGroupPermission`."""
+  authGroupPermissionsByGroupIdList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `AuthGroupPermission`."""
+    orderBy: [AuthGroupPermissionsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AuthGroupPermissionCondition
+  ): [AuthGroupPermission!]!
+
+  """Reads and enables pagination through a set of `AuthUserGroup`."""
+  authUserGroupsByGroupIdList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `AuthUserGroup`."""
+    orderBy: [AuthUserGroupsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AuthUserGroupCondition
+  ): [AuthUserGroup!]!
+}
+
+type AuthGroupPermission {
+  id: BigInt!
+  groupId: Int!
+  permissionId: Int!
+
+  """
+  Reads a single `AuthGroup` that is related to this `AuthGroupPermission`.
+  """
+  group: AuthGroup
+
+  """
+  Reads a single `AuthPermission` that is related to this `AuthGroupPermission`.
+  """
+  permission: AuthPermission
+}
+
+"""
+A signed eight-byte integer. The upper big integer values are greater than the
+max value for a JavaScript number. Therefore all big integers will be output as
+strings and not numbers.
+"""
+scalar BigInt
+
+type AuthPermission {
+  id: Int!
+  name: String!
+  contentTypeId: Int!
+  codename: String!
+
+  """
+  Reads a single `DjangoContentType` that is related to this `AuthPermission`.
+  """
+  contentType: DjangoContentType
+
+  """Reads and enables pagination through a set of `AuthGroupPermission`."""
+  authGroupPermissionsByPermissionIdList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `AuthGroupPermission`."""
+    orderBy: [AuthGroupPermissionsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AuthGroupPermissionCondition
+  ): [AuthGroupPermission!]!
+
+  """
+  Reads and enables pagination through a set of `AuthUserUserPermission`.
+  """
+  authUserUserPermissionsByPermissionIdList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `AuthUserUserPermission`."""
+    orderBy: [AuthUserUserPermissionsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AuthUserUserPermissionCondition
+  ): [AuthUserUserPermission!]!
+}
+
+type DjangoContentType {
+  id: Int!
+  appLabel: String!
+  model: String!
+
+  """Reads and enables pagination through a set of `AuthPermission`."""
+  authPermissionsByContentTypeIdList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `AuthPermission`."""
+    orderBy: [AuthPermissionsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AuthPermissionCondition
+  ): [AuthPermission!]!
+}
+
+"""Methods to use when ordering `AuthPermission`."""
+enum AuthPermissionsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  CONTENT_TYPE_ID_ASC
+  CONTENT_TYPE_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `AuthPermission` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input AuthPermissionCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `contentTypeId` field."""
+  contentTypeId: Int
+}
+
+"""Methods to use when ordering `AuthGroupPermission`."""
+enum AuthGroupPermissionsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  GROUP_ID_ASC
+  GROUP_ID_DESC
+  PERMISSION_ID_ASC
+  PERMISSION_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `AuthGroupPermission` object types. All fields
+are tested for equality and combined with a logical ‘and.’
+"""
+input AuthGroupPermissionCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `groupId` field."""
+  groupId: Int
+
+  """Checks for equality with the object’s `permissionId` field."""
+  permissionId: Int
+}
+
+type AuthUserUserPermission {
+  id: BigInt!
+  userId: Int!
+  permissionId: Int!
+
+  """
+  Reads a single `AuthUser` that is related to this `AuthUserUserPermission`.
+  """
+  user: AuthUser
+
+  """
+  Reads a single `AuthPermission` that is related to this `AuthUserUserPermission`.
+  """
+  permission: AuthPermission
+}
+
+type AuthUser {
+  id: Int!
+  password: String!
+  lastLogin: Datetime
+  isSuperuser: Boolean!
+  username: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+  isStaff: Boolean!
+  isActive: Boolean!
+  dateJoined: Datetime!
+
+  """Reads and enables pagination through a set of `AuthUserGroup`."""
+  authUserGroupsByUserIdList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `AuthUserGroup`."""
+    orderBy: [AuthUserGroupsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AuthUserGroupCondition
+  ): [AuthUserGroup!]!
+
+  """
+  Reads and enables pagination through a set of `AuthUserUserPermission`.
+  """
+  authUserUserPermissionsByUserIdList(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Skip the first `n` values."""
+    offset: Int
+
+    """The method to use when ordering `AuthUserUserPermission`."""
+    orderBy: [AuthUserUserPermissionsOrderBy!]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: AuthUserUserPermissionCondition
+  ): [AuthUserUserPermission!]!
+}
+
+type AuthUserGroup {
+  id: BigInt!
+  userId: Int!
+  groupId: Int!
+
+  """Reads a single `AuthUser` that is related to this `AuthUserGroup`."""
+  user: AuthUser
+
+  """Reads a single `AuthGroup` that is related to this `AuthUserGroup`."""
+  group: AuthGroup
+}
+
+"""Methods to use when ordering `AuthUserGroup`."""
+enum AuthUserGroupsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  USER_ID_ASC
+  USER_ID_DESC
+  GROUP_ID_ASC
+  GROUP_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `AuthUserGroup` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input AuthUserGroupCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `userId` field."""
+  userId: Int
+
+  """Checks for equality with the object’s `groupId` field."""
+  groupId: Int
+}
+
+"""Methods to use when ordering `AuthUserUserPermission`."""
+enum AuthUserUserPermissionsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  USER_ID_ASC
+  USER_ID_DESC
+  PERMISSION_ID_ASC
+  PERMISSION_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `AuthUserUserPermission` object types. All fields
+are tested for equality and combined with a logical ‘and.’
+"""
+input AuthUserUserPermissionCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `userId` field."""
+  userId: Int
+
+  """Checks for equality with the object’s `permissionId` field."""
+  permissionId: Int
+}
+
+"""Methods to use when ordering `AuthGroup`."""
+enum AuthGroupsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `AuthGroup` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input AuthGroupCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+}
+
+"""Methods to use when ordering `AuthUser`."""
+enum AuthUsersOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  USERNAME_ASC
+  USERNAME_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `AuthUser` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input AuthUserCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `username` field."""
+  username: String
+}
+
+type Category {
+  id: Int!
+  name: String!
+  lastUpdate: Datetime!
+}
+
+"""Methods to use when ordering `Category`."""
+enum CategoriesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Category` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input CategoryCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+}
+
+"""Methods to use when ordering `DjangoContentType`."""
+enum DjangoContentTypesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  APP_LABEL_ASC
+  APP_LABEL_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `DjangoContentType` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input DjangoContentTypeCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `appLabel` field."""
+  appLabel: String
+}
+
+type DjangoMigration {
+  id: BigInt!
+  app: String!
+  name: String!
+  applied: Datetime!
+}
+
+"""Methods to use when ordering `DjangoMigration`."""
+enum DjangoMigrationsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `DjangoMigration` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input DjangoMigrationCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+}
+
+type FilmActor {
+  actorId: Int!
+  filmId: Int!
+  lastUpdate: Datetime!
+}
+
+"""Methods to use when ordering `FilmActor`."""
+enum FilmActorsOrderBy {
+  NATURAL
+  ACTOR_ID_ASC
+  ACTOR_ID_DESC
+  FILM_ID_ASC
+  FILM_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `FilmActor` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input FilmActorCondition {
+  """Checks for equality with the object’s `actorId` field."""
+  actorId: Int
+
+  """Checks for equality with the object’s `filmId` field."""
+  filmId: Int
+}
+
+type FilmCategory {
+  filmId: Int!
+  categoryId: Int!
+  lastUpdate: Datetime!
+}
+
+"""Methods to use when ordering `FilmCategory`."""
+enum FilmCategoriesOrderBy {
+  NATURAL
+}
+
+type Film {
+  id: Int!
+  title: String!
+  description: String
+  releaseYear: Int
+  languageId: Int!
+  rentalDuration: Int!
+  rentalRate: BigFloat!
+  length: Int
+  replacementCost: BigFloat!
+  rating: String
+  lastUpdate: Datetime!
+  specialFeatures: [String]
+  fulltext: String!
+}
+
+"""Methods to use when ordering `Film`."""
+enum FilmsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  TITLE_ASC
+  TITLE_DESC
+  LANGUAGE_ID_ASC
+  LANGUAGE_ID_DESC
+  FULLTEXT_ASC
+  FULLTEXT_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Film` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input FilmCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `title` field."""
+  title: String
+
+  """Checks for equality with the object’s `languageId` field."""
+  languageId: Int
+
+  """Checks for equality with the object’s `fulltext` field."""
+  fulltext: String
+}
+
+"""Methods to use when ordering `Genre`."""
+enum GenresOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Genre` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input GenreCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+}
+
+"""Methods to use when ordering `MediaType`."""
+enum MediaTypesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `MediaType` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input MediaTypeCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+}
+
+"""Methods to use when ordering `Playlist`."""
+enum PlaylistsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Playlist` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input PlaylistCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+}
+
+"""
+The root mutation type which contains root level fields which mutate data.
+"""
+type Mutation {
+  """Creates a single `Actor`."""
+  createActor(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateActorInput!
+  ): CreateActorPayload
+
+  """Creates a single `Album`."""
+  createAlbum(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateAlbumInput!
+  ): CreateAlbumPayload
+
+  """Creates a single `Artist`."""
+  createArtist(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateArtistInput!
+  ): CreateArtistPayload
+
+  """Creates a single `AuthGroup`."""
+  createAuthGroup(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateAuthGroupInput!
+  ): CreateAuthGroupPayload
+
+  """Creates a single `AuthGroupPermission`."""
+  createAuthGroupPermission(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateAuthGroupPermissionInput!
+  ): CreateAuthGroupPermissionPayload
+
+  """Creates a single `AuthPermission`."""
+  createAuthPermission(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateAuthPermissionInput!
+  ): CreateAuthPermissionPayload
+
+  """Creates a single `AuthUser`."""
+  createAuthUser(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateAuthUserInput!
+  ): CreateAuthUserPayload
+
+  """Creates a single `AuthUserGroup`."""
+  createAuthUserGroup(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateAuthUserGroupInput!
+  ): CreateAuthUserGroupPayload
+
+  """Creates a single `AuthUserUserPermission`."""
+  createAuthUserUserPermission(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateAuthUserUserPermissionInput!
+  ): CreateAuthUserUserPermissionPayload
+
+  """Creates a single `Category`."""
+  createCategory(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateCategoryInput!
+  ): CreateCategoryPayload
+
+  """Creates a single `Customer`."""
+  createCustomer(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateCustomerInput!
+  ): CreateCustomerPayload
+
+  """Creates a single `DjangoContentType`."""
+  createDjangoContentType(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateDjangoContentTypeInput!
+  ): CreateDjangoContentTypePayload
+
+  """Creates a single `DjangoMigration`."""
+  createDjangoMigration(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateDjangoMigrationInput!
+  ): CreateDjangoMigrationPayload
+
+  """Creates a single `Employee`."""
+  createEmployee(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateEmployeeInput!
+  ): CreateEmployeePayload
+
+  """Creates a single `FilmActor`."""
+  createFilmActor(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateFilmActorInput!
+  ): CreateFilmActorPayload
+
+  """Creates a single `FilmCategory`."""
+  createFilmCategory(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateFilmCategoryInput!
+  ): CreateFilmCategoryPayload
+
+  """Creates a single `Film`."""
+  createFilm(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateFilmInput!
+  ): CreateFilmPayload
+
+  """Creates a single `Genre`."""
+  createGenre(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateGenreInput!
+  ): CreateGenrePayload
+
+  """Creates a single `InvoiceLine`."""
+  createInvoiceLine(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateInvoiceLineInput!
+  ): CreateInvoiceLinePayload
+
+  """Creates a single `Invoice`."""
+  createInvoice(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateInvoiceInput!
+  ): CreateInvoicePayload
+
+  """Creates a single `MediaType`."""
+  createMediaType(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateMediaTypeInput!
+  ): CreateMediaTypePayload
+
+  """Creates a single `PlaylistTrack`."""
+  createPlaylistTrack(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreatePlaylistTrackInput!
+  ): CreatePlaylistTrackPayload
+
+  """Creates a single `Playlist`."""
+  createPlaylist(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreatePlaylistInput!
+  ): CreatePlaylistPayload
+
+  """Creates a single `Track`."""
+  createTrack(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateTrackInput!
+  ): CreateTrackPayload
+
+  """Updates a single `Actor` using a unique key and a patch."""
+  updateActor(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateActorInput!
+  ): UpdateActorPayload
+
+  """Updates a single `Album` using a unique key and a patch."""
+  updateAlbum(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAlbumInput!
+  ): UpdateAlbumPayload
+
+  """Updates a single `Artist` using a unique key and a patch."""
+  updateArtist(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateArtistInput!
+  ): UpdateArtistPayload
+
+  """Updates a single `AuthGroup` using a unique key and a patch."""
+  updateAuthGroup(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAuthGroupInput!
+  ): UpdateAuthGroupPayload
+
+  """Updates a single `AuthGroup` using a unique key and a patch."""
+  updateAuthGroupByName(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAuthGroupByNameInput!
+  ): UpdateAuthGroupPayload
+
+  """Updates a single `AuthGroupPermission` using a unique key and a patch."""
+  updateAuthGroupPermission(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAuthGroupPermissionInput!
+  ): UpdateAuthGroupPermissionPayload
+
+  """Updates a single `AuthGroupPermission` using a unique key and a patch."""
+  updateAuthGroupPermissionByGroupIdAndPermissionId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAuthGroupPermissionByGroupIdAndPermissionIdInput!
+  ): UpdateAuthGroupPermissionPayload
+
+  """Updates a single `AuthPermission` using a unique key and a patch."""
+  updateAuthPermission(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAuthPermissionInput!
+  ): UpdateAuthPermissionPayload
+
+  """Updates a single `AuthPermission` using a unique key and a patch."""
+  updateAuthPermissionByContentTypeIdAndCodename(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAuthPermissionByContentTypeIdAndCodenameInput!
+  ): UpdateAuthPermissionPayload
+
+  """Updates a single `AuthUser` using a unique key and a patch."""
+  updateAuthUser(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAuthUserInput!
+  ): UpdateAuthUserPayload
+
+  """Updates a single `AuthUser` using a unique key and a patch."""
+  updateAuthUserByUsername(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAuthUserByUsernameInput!
+  ): UpdateAuthUserPayload
+
+  """Updates a single `AuthUserGroup` using a unique key and a patch."""
+  updateAuthUserGroup(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAuthUserGroupInput!
+  ): UpdateAuthUserGroupPayload
+
+  """Updates a single `AuthUserGroup` using a unique key and a patch."""
+  updateAuthUserGroupByUserIdAndGroupId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAuthUserGroupByUserIdAndGroupIdInput!
+  ): UpdateAuthUserGroupPayload
+
+  """
+  Updates a single `AuthUserUserPermission` using a unique key and a patch.
+  """
+  updateAuthUserUserPermission(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAuthUserUserPermissionInput!
+  ): UpdateAuthUserUserPermissionPayload
+
+  """
+  Updates a single `AuthUserUserPermission` using a unique key and a patch.
+  """
+  updateAuthUserUserPermissionByUserIdAndPermissionId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateAuthUserUserPermissionByUserIdAndPermissionIdInput!
+  ): UpdateAuthUserUserPermissionPayload
+
+  """Updates a single `Category` using a unique key and a patch."""
+  updateCategory(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateCategoryInput!
+  ): UpdateCategoryPayload
+
+  """Updates a single `Customer` using a unique key and a patch."""
+  updateCustomer(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateCustomerInput!
+  ): UpdateCustomerPayload
+
+  """Updates a single `DjangoContentType` using a unique key and a patch."""
+  updateDjangoContentType(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateDjangoContentTypeInput!
+  ): UpdateDjangoContentTypePayload
+
+  """Updates a single `DjangoContentType` using a unique key and a patch."""
+  updateDjangoContentTypeByAppLabelAndModel(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateDjangoContentTypeByAppLabelAndModelInput!
+  ): UpdateDjangoContentTypePayload
+
+  """Updates a single `DjangoMigration` using a unique key and a patch."""
+  updateDjangoMigration(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateDjangoMigrationInput!
+  ): UpdateDjangoMigrationPayload
+
+  """Updates a single `Employee` using a unique key and a patch."""
+  updateEmployee(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateEmployeeInput!
+  ): UpdateEmployeePayload
+
+  """Updates a single `FilmActor` using a unique key and a patch."""
+  updateFilmActor(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateFilmActorInput!
+  ): UpdateFilmActorPayload
+
+  """Updates a single `Film` using a unique key and a patch."""
+  updateFilm(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateFilmInput!
+  ): UpdateFilmPayload
+
+  """Updates a single `Genre` using a unique key and a patch."""
+  updateGenre(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateGenreInput!
+  ): UpdateGenrePayload
+
+  """Updates a single `InvoiceLine` using a unique key and a patch."""
+  updateInvoiceLine(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateInvoiceLineInput!
+  ): UpdateInvoiceLinePayload
+
+  """Updates a single `Invoice` using a unique key and a patch."""
+  updateInvoice(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateInvoiceInput!
+  ): UpdateInvoicePayload
+
+  """Updates a single `MediaType` using a unique key and a patch."""
+  updateMediaType(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateMediaTypeInput!
+  ): UpdateMediaTypePayload
+
+  """Updates a single `PlaylistTrack` using a unique key and a patch."""
+  updatePlaylistTrack(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdatePlaylistTrackInput!
+  ): UpdatePlaylistTrackPayload
+
+  """Updates a single `Playlist` using a unique key and a patch."""
+  updatePlaylist(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdatePlaylistInput!
+  ): UpdatePlaylistPayload
+
+  """Updates a single `Track` using a unique key and a patch."""
+  updateTrack(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateTrackInput!
+  ): UpdateTrackPayload
+
+  """Deletes a single `Actor` using a unique key."""
+  deleteActor(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteActorInput!
+  ): DeleteActorPayload
+
+  """Deletes a single `Album` using a unique key."""
+  deleteAlbum(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAlbumInput!
+  ): DeleteAlbumPayload
+
+  """Deletes a single `Artist` using a unique key."""
+  deleteArtist(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteArtistInput!
+  ): DeleteArtistPayload
+
+  """Deletes a single `AuthGroup` using a unique key."""
+  deleteAuthGroup(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAuthGroupInput!
+  ): DeleteAuthGroupPayload
+
+  """Deletes a single `AuthGroup` using a unique key."""
+  deleteAuthGroupByName(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAuthGroupByNameInput!
+  ): DeleteAuthGroupPayload
+
+  """Deletes a single `AuthGroupPermission` using a unique key."""
+  deleteAuthGroupPermission(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAuthGroupPermissionInput!
+  ): DeleteAuthGroupPermissionPayload
+
+  """Deletes a single `AuthGroupPermission` using a unique key."""
+  deleteAuthGroupPermissionByGroupIdAndPermissionId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAuthGroupPermissionByGroupIdAndPermissionIdInput!
+  ): DeleteAuthGroupPermissionPayload
+
+  """Deletes a single `AuthPermission` using a unique key."""
+  deleteAuthPermission(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAuthPermissionInput!
+  ): DeleteAuthPermissionPayload
+
+  """Deletes a single `AuthPermission` using a unique key."""
+  deleteAuthPermissionByContentTypeIdAndCodename(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAuthPermissionByContentTypeIdAndCodenameInput!
+  ): DeleteAuthPermissionPayload
+
+  """Deletes a single `AuthUser` using a unique key."""
+  deleteAuthUser(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAuthUserInput!
+  ): DeleteAuthUserPayload
+
+  """Deletes a single `AuthUser` using a unique key."""
+  deleteAuthUserByUsername(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAuthUserByUsernameInput!
+  ): DeleteAuthUserPayload
+
+  """Deletes a single `AuthUserGroup` using a unique key."""
+  deleteAuthUserGroup(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAuthUserGroupInput!
+  ): DeleteAuthUserGroupPayload
+
+  """Deletes a single `AuthUserGroup` using a unique key."""
+  deleteAuthUserGroupByUserIdAndGroupId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAuthUserGroupByUserIdAndGroupIdInput!
+  ): DeleteAuthUserGroupPayload
+
+  """Deletes a single `AuthUserUserPermission` using a unique key."""
+  deleteAuthUserUserPermission(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAuthUserUserPermissionInput!
+  ): DeleteAuthUserUserPermissionPayload
+
+  """Deletes a single `AuthUserUserPermission` using a unique key."""
+  deleteAuthUserUserPermissionByUserIdAndPermissionId(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteAuthUserUserPermissionByUserIdAndPermissionIdInput!
+  ): DeleteAuthUserUserPermissionPayload
+
+  """Deletes a single `Category` using a unique key."""
+  deleteCategory(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteCategoryInput!
+  ): DeleteCategoryPayload
+
+  """Deletes a single `Customer` using a unique key."""
+  deleteCustomer(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteCustomerInput!
+  ): DeleteCustomerPayload
+
+  """Deletes a single `DjangoContentType` using a unique key."""
+  deleteDjangoContentType(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteDjangoContentTypeInput!
+  ): DeleteDjangoContentTypePayload
+
+  """Deletes a single `DjangoContentType` using a unique key."""
+  deleteDjangoContentTypeByAppLabelAndModel(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteDjangoContentTypeByAppLabelAndModelInput!
+  ): DeleteDjangoContentTypePayload
+
+  """Deletes a single `DjangoMigration` using a unique key."""
+  deleteDjangoMigration(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteDjangoMigrationInput!
+  ): DeleteDjangoMigrationPayload
+
+  """Deletes a single `Employee` using a unique key."""
+  deleteEmployee(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteEmployeeInput!
+  ): DeleteEmployeePayload
+
+  """Deletes a single `FilmActor` using a unique key."""
+  deleteFilmActor(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteFilmActorInput!
+  ): DeleteFilmActorPayload
+
+  """Deletes a single `Film` using a unique key."""
+  deleteFilm(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteFilmInput!
+  ): DeleteFilmPayload
+
+  """Deletes a single `Genre` using a unique key."""
+  deleteGenre(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteGenreInput!
+  ): DeleteGenrePayload
+
+  """Deletes a single `InvoiceLine` using a unique key."""
+  deleteInvoiceLine(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteInvoiceLineInput!
+  ): DeleteInvoiceLinePayload
+
+  """Deletes a single `Invoice` using a unique key."""
+  deleteInvoice(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteInvoiceInput!
+  ): DeleteInvoicePayload
+
+  """Deletes a single `MediaType` using a unique key."""
+  deleteMediaType(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteMediaTypeInput!
+  ): DeleteMediaTypePayload
+
+  """Deletes a single `PlaylistTrack` using a unique key."""
+  deletePlaylistTrack(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeletePlaylistTrackInput!
+  ): DeletePlaylistTrackPayload
+
+  """Deletes a single `Playlist` using a unique key."""
+  deletePlaylist(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeletePlaylistInput!
+  ): DeletePlaylistPayload
+
+  """Deletes a single `Track` using a unique key."""
+  deleteTrack(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteTrackInput!
+  ): DeleteTrackPayload
+}
+
+"""The output of our create `Actor` mutation."""
+type CreateActorPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Actor` that was created by this mutation."""
+  actor: Actor
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `Actor` mutation."""
+input CreateActorInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Actor` to be created by this mutation."""
+  actor: ActorInput!
+}
+
+"""An input for mutations affecting `Actor`"""
+input ActorInput {
+  id: Int
+  firstName: String!
+  lastName: String!
+  lastUpdate: Datetime
+}
+
+"""The output of our create `Album` mutation."""
+type CreateAlbumPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Album` that was created by this mutation."""
+  album: Album
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Artist` that is related to this `Album`."""
+  artist: Artist
+}
+
+"""All input for the create `Album` mutation."""
+input CreateAlbumInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Album` to be created by this mutation."""
+  album: AlbumInput!
+}
+
+"""An input for mutations affecting `Album`"""
+input AlbumInput {
+  id: Int
+  title: String!
+  artistId: Int!
+}
+
+"""The output of our create `Artist` mutation."""
+type CreateArtistPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Artist` that was created by this mutation."""
+  artist: Artist
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `Artist` mutation."""
+input CreateArtistInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Artist` to be created by this mutation."""
+  artist: ArtistInput!
+}
+
+"""An input for mutations affecting `Artist`"""
+input ArtistInput {
+  id: Int
+  name: String
+}
+
+"""The output of our create `AuthGroup` mutation."""
+type CreateAuthGroupPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthGroup` that was created by this mutation."""
+  authGroup: AuthGroup
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `AuthGroup` mutation."""
+input CreateAuthGroupInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `AuthGroup` to be created by this mutation."""
+  authGroup: AuthGroupInput!
+}
+
+"""An input for mutations affecting `AuthGroup`"""
+input AuthGroupInput {
+  id: Int
+  name: String!
+}
+
+"""The output of our create `AuthGroupPermission` mutation."""
+type CreateAuthGroupPermissionPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthGroupPermission` that was created by this mutation."""
+  authGroupPermission: AuthGroupPermission
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `AuthGroup` that is related to this `AuthGroupPermission`.
+  """
+  group: AuthGroup
+
+  """
+  Reads a single `AuthPermission` that is related to this `AuthGroupPermission`.
+  """
+  permission: AuthPermission
+}
+
+"""All input for the create `AuthGroupPermission` mutation."""
+input CreateAuthGroupPermissionInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `AuthGroupPermission` to be created by this mutation."""
+  authGroupPermission: AuthGroupPermissionInput!
+}
+
+"""An input for mutations affecting `AuthGroupPermission`"""
+input AuthGroupPermissionInput {
+  id: BigInt
+  groupId: Int!
+  permissionId: Int!
+}
+
+"""The output of our create `AuthPermission` mutation."""
+type CreateAuthPermissionPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthPermission` that was created by this mutation."""
+  authPermission: AuthPermission
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `DjangoContentType` that is related to this `AuthPermission`.
+  """
+  contentType: DjangoContentType
+}
+
+"""All input for the create `AuthPermission` mutation."""
+input CreateAuthPermissionInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `AuthPermission` to be created by this mutation."""
+  authPermission: AuthPermissionInput!
+}
+
+"""An input for mutations affecting `AuthPermission`"""
+input AuthPermissionInput {
+  id: Int
+  name: String!
+  contentTypeId: Int!
+  codename: String!
+}
+
+"""The output of our create `AuthUser` mutation."""
+type CreateAuthUserPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthUser` that was created by this mutation."""
+  authUser: AuthUser
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `AuthUser` mutation."""
+input CreateAuthUserInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `AuthUser` to be created by this mutation."""
+  authUser: AuthUserInput!
+}
+
+"""An input for mutations affecting `AuthUser`"""
+input AuthUserInput {
+  id: Int
+  password: String!
+  lastLogin: Datetime
+  isSuperuser: Boolean!
+  username: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+  isStaff: Boolean!
+  isActive: Boolean!
+  dateJoined: Datetime!
+}
+
+"""The output of our create `AuthUserGroup` mutation."""
+type CreateAuthUserGroupPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthUserGroup` that was created by this mutation."""
+  authUserGroup: AuthUserGroup
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `AuthUser` that is related to this `AuthUserGroup`."""
+  user: AuthUser
+
+  """Reads a single `AuthGroup` that is related to this `AuthUserGroup`."""
+  group: AuthGroup
+}
+
+"""All input for the create `AuthUserGroup` mutation."""
+input CreateAuthUserGroupInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `AuthUserGroup` to be created by this mutation."""
+  authUserGroup: AuthUserGroupInput!
+}
+
+"""An input for mutations affecting `AuthUserGroup`"""
+input AuthUserGroupInput {
+  id: BigInt
+  userId: Int!
+  groupId: Int!
+}
+
+"""The output of our create `AuthUserUserPermission` mutation."""
+type CreateAuthUserUserPermissionPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthUserUserPermission` that was created by this mutation."""
+  authUserUserPermission: AuthUserUserPermission
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `AuthUser` that is related to this `AuthUserUserPermission`.
+  """
+  user: AuthUser
+
+  """
+  Reads a single `AuthPermission` that is related to this `AuthUserUserPermission`.
+  """
+  permission: AuthPermission
+}
+
+"""All input for the create `AuthUserUserPermission` mutation."""
+input CreateAuthUserUserPermissionInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `AuthUserUserPermission` to be created by this mutation."""
+  authUserUserPermission: AuthUserUserPermissionInput!
+}
+
+"""An input for mutations affecting `AuthUserUserPermission`"""
+input AuthUserUserPermissionInput {
+  id: BigInt
+  userId: Int!
+  permissionId: Int!
+}
+
+"""The output of our create `Category` mutation."""
+type CreateCategoryPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Category` that was created by this mutation."""
+  category: Category
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `Category` mutation."""
+input CreateCategoryInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Category` to be created by this mutation."""
+  category: CategoryInput!
+}
+
+"""An input for mutations affecting `Category`"""
+input CategoryInput {
+  id: Int
+  name: String!
+  lastUpdate: Datetime
+}
+
+"""The output of our create `Customer` mutation."""
+type CreateCustomerPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Customer` that was created by this mutation."""
+  customer: Customer
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Employee` that is related to this `Customer`."""
+  supportRep: Employee
+}
+
+"""All input for the create `Customer` mutation."""
+input CreateCustomerInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Customer` to be created by this mutation."""
+  customer: CustomerInput!
+}
+
+"""An input for mutations affecting `Customer`"""
+input CustomerInput {
+  id: Int
+  firstName: String!
+  lastName: String!
+  company: String
+  address: String
+  city: String
+  state: String
+  country: String
+  postalCode: String
+  phone: String
+  fax: String
+  email: String!
+  supportRepId: Int
+}
+
+"""The output of our create `DjangoContentType` mutation."""
+type CreateDjangoContentTypePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `DjangoContentType` that was created by this mutation."""
+  djangoContentType: DjangoContentType
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `DjangoContentType` mutation."""
+input CreateDjangoContentTypeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `DjangoContentType` to be created by this mutation."""
+  djangoContentType: DjangoContentTypeInput!
+}
+
+"""An input for mutations affecting `DjangoContentType`"""
+input DjangoContentTypeInput {
+  id: Int
+  appLabel: String!
+  model: String!
+}
+
+"""The output of our create `DjangoMigration` mutation."""
+type CreateDjangoMigrationPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `DjangoMigration` that was created by this mutation."""
+  djangoMigration: DjangoMigration
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `DjangoMigration` mutation."""
+input CreateDjangoMigrationInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `DjangoMigration` to be created by this mutation."""
+  djangoMigration: DjangoMigrationInput!
+}
+
+"""An input for mutations affecting `DjangoMigration`"""
+input DjangoMigrationInput {
+  id: BigInt
+  app: String!
+  name: String!
+  applied: Datetime!
+}
+
+"""The output of our create `Employee` mutation."""
+type CreateEmployeePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Employee` that was created by this mutation."""
+  employee: Employee
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Employee` that is related to this `Employee`."""
+  employeeByReportsTo: Employee
+}
+
+"""All input for the create `Employee` mutation."""
+input CreateEmployeeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Employee` to be created by this mutation."""
+  employee: EmployeeInput!
+}
+
+"""An input for mutations affecting `Employee`"""
+input EmployeeInput {
+  id: Int
+  lastName: String!
+  firstName: String!
+  title: String
+  reportsTo: Int
+  birthDate: Datetime
+  hireDate: Datetime
+  address: String
+  city: String
+  state: String
+  country: String
+  postalCode: String
+  phone: String
+  fax: String
+  email: String
+}
+
+"""The output of our create `FilmActor` mutation."""
+type CreateFilmActorPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `FilmActor` that was created by this mutation."""
+  filmActor: FilmActor
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `FilmActor` mutation."""
+input CreateFilmActorInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `FilmActor` to be created by this mutation."""
+  filmActor: FilmActorInput!
+}
+
+"""An input for mutations affecting `FilmActor`"""
+input FilmActorInput {
+  actorId: Int!
+  filmId: Int!
+  lastUpdate: Datetime
+}
+
+"""The output of our create `FilmCategory` mutation."""
+type CreateFilmCategoryPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `FilmCategory` that was created by this mutation."""
+  filmCategory: FilmCategory
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `FilmCategory` mutation."""
+input CreateFilmCategoryInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `FilmCategory` to be created by this mutation."""
+  filmCategory: FilmCategoryInput!
+}
+
+"""An input for mutations affecting `FilmCategory`"""
+input FilmCategoryInput {
+  filmId: Int!
+  categoryId: Int!
+  lastUpdate: Datetime
+}
+
+"""The output of our create `Film` mutation."""
+type CreateFilmPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Film` that was created by this mutation."""
+  film: Film
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `Film` mutation."""
+input CreateFilmInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Film` to be created by this mutation."""
+  film: FilmInput!
+}
+
+"""An input for mutations affecting `Film`"""
+input FilmInput {
+  id: Int
+  title: String!
+  description: String
+  releaseYear: Int
+  languageId: Int!
+  rentalDuration: Int
+  rentalRate: BigFloat
+  length: Int
+  replacementCost: BigFloat
+  rating: String
+  lastUpdate: Datetime
+  specialFeatures: [String]
+  fulltext: String!
+}
+
+"""The output of our create `Genre` mutation."""
+type CreateGenrePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Genre` that was created by this mutation."""
+  genre: Genre
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `Genre` mutation."""
+input CreateGenreInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Genre` to be created by this mutation."""
+  genre: GenreInput!
+}
+
+"""An input for mutations affecting `Genre`"""
+input GenreInput {
+  id: Int
+  name: String
+}
+
+"""The output of our create `InvoiceLine` mutation."""
+type CreateInvoiceLinePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `InvoiceLine` that was created by this mutation."""
+  invoiceLine: InvoiceLine
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Invoice` that is related to this `InvoiceLine`."""
+  invoice: Invoice
+
+  """Reads a single `Track` that is related to this `InvoiceLine`."""
+  track: Track
+}
+
+"""All input for the create `InvoiceLine` mutation."""
+input CreateInvoiceLineInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `InvoiceLine` to be created by this mutation."""
+  invoiceLine: InvoiceLineInput!
+}
+
+"""An input for mutations affecting `InvoiceLine`"""
+input InvoiceLineInput {
+  id: Int
+  invoiceId: Int!
+  trackId: Int!
+  unitPrice: BigFloat!
+  quantity: Int!
+}
+
+"""The output of our create `Invoice` mutation."""
+type CreateInvoicePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Invoice` that was created by this mutation."""
+  invoice: Invoice
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Customer` that is related to this `Invoice`."""
+  customer: Customer
+}
+
+"""All input for the create `Invoice` mutation."""
+input CreateInvoiceInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Invoice` to be created by this mutation."""
+  invoice: InvoiceInput!
+}
+
+"""An input for mutations affecting `Invoice`"""
+input InvoiceInput {
+  id: Int
+  customerId: Int!
+  invoiceDate: Datetime!
+  billingAddress: String
+  billingCity: String
+  billingState: String
+  billingCountry: String
+  billingPostalCode: String
+  total: BigFloat!
+}
+
+"""The output of our create `MediaType` mutation."""
+type CreateMediaTypePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `MediaType` that was created by this mutation."""
+  mediaType: MediaType
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `MediaType` mutation."""
+input CreateMediaTypeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `MediaType` to be created by this mutation."""
+  mediaType: MediaTypeInput!
+}
+
+"""An input for mutations affecting `MediaType`"""
+input MediaTypeInput {
+  id: Int
+  name: String
+}
+
+"""The output of our create `PlaylistTrack` mutation."""
+type CreatePlaylistTrackPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `PlaylistTrack` that was created by this mutation."""
+  playlistTrack: PlaylistTrack
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Playlist` that is related to this `PlaylistTrack`."""
+  playlist: Playlist
+
+  """Reads a single `Track` that is related to this `PlaylistTrack`."""
+  track: Track
+}
+
+"""All input for the create `PlaylistTrack` mutation."""
+input CreatePlaylistTrackInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `PlaylistTrack` to be created by this mutation."""
+  playlistTrack: PlaylistTrackInput!
+}
+
+"""An input for mutations affecting `PlaylistTrack`"""
+input PlaylistTrackInput {
+  playlistId: Int!
+  trackId: Int!
+}
+
+"""The output of our create `Playlist` mutation."""
+type CreatePlaylistPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Playlist` that was created by this mutation."""
+  playlist: Playlist
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the create `Playlist` mutation."""
+input CreatePlaylistInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Playlist` to be created by this mutation."""
+  playlist: PlaylistInput!
+}
+
+"""An input for mutations affecting `Playlist`"""
+input PlaylistInput {
+  id: Int
+  name: String
+}
+
+"""The output of our create `Track` mutation."""
+type CreateTrackPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Track` that was created by this mutation."""
+  track: Track
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Album` that is related to this `Track`."""
+  album: Album
+
+  """Reads a single `MediaType` that is related to this `Track`."""
+  mediaType: MediaType
+
+  """Reads a single `Genre` that is related to this `Track`."""
+  genre: Genre
+}
+
+"""All input for the create `Track` mutation."""
+input CreateTrackInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Track` to be created by this mutation."""
+  track: TrackInput!
+}
+
+"""An input for mutations affecting `Track`"""
+input TrackInput {
+  id: Int
+  name: String!
+  albumId: Int
+  mediaTypeId: Int!
+  genreId: Int
+  composer: String
+  milliseconds: Int!
+  bytes: Int
+  unitPrice: BigFloat!
+}
+
+"""The output of our update `Actor` mutation."""
+type UpdateActorPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Actor` that was updated by this mutation."""
+  actor: Actor
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updateActor` mutation."""
+input UpdateActorInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Actor` being updated.
+  """
+  patch: ActorPatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `Actor`. Fields that are set will be updated.
+"""
+input ActorPatch {
+  id: Int
+  firstName: String
+  lastName: String
+  lastUpdate: Datetime
+}
+
+"""The output of our update `Album` mutation."""
+type UpdateAlbumPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Album` that was updated by this mutation."""
+  album: Album
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Artist` that is related to this `Album`."""
+  artist: Artist
+}
+
+"""All input for the `updateAlbum` mutation."""
+input UpdateAlbumInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Album` being updated.
+  """
+  patch: AlbumPatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `Album`. Fields that are set will be updated.
+"""
+input AlbumPatch {
+  id: Int
+  title: String
+  artistId: Int
+}
+
+"""The output of our update `Artist` mutation."""
+type UpdateArtistPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Artist` that was updated by this mutation."""
+  artist: Artist
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updateArtist` mutation."""
+input UpdateArtistInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Artist` being updated.
+  """
+  patch: ArtistPatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `Artist`. Fields that are set will be updated.
+"""
+input ArtistPatch {
+  id: Int
+  name: String
+}
+
+"""The output of our update `AuthGroup` mutation."""
+type UpdateAuthGroupPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthGroup` that was updated by this mutation."""
+  authGroup: AuthGroup
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updateAuthGroup` mutation."""
+input UpdateAuthGroupInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `AuthGroup` being updated.
+  """
+  patch: AuthGroupPatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `AuthGroup`. Fields that are set will be updated.
+"""
+input AuthGroupPatch {
+  id: Int
+  name: String
+}
+
+"""All input for the `updateAuthGroupByName` mutation."""
+input UpdateAuthGroupByNameInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `AuthGroup` being updated.
+  """
+  patch: AuthGroupPatch!
+  name: String!
+}
+
+"""The output of our update `AuthGroupPermission` mutation."""
+type UpdateAuthGroupPermissionPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthGroupPermission` that was updated by this mutation."""
+  authGroupPermission: AuthGroupPermission
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `AuthGroup` that is related to this `AuthGroupPermission`.
+  """
+  group: AuthGroup
+
+  """
+  Reads a single `AuthPermission` that is related to this `AuthGroupPermission`.
+  """
+  permission: AuthPermission
+}
+
+"""All input for the `updateAuthGroupPermission` mutation."""
+input UpdateAuthGroupPermissionInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `AuthGroupPermission` being updated.
+  """
+  patch: AuthGroupPermissionPatch!
+  id: BigInt!
+}
+
+"""
+Represents an update to a `AuthGroupPermission`. Fields that are set will be updated.
+"""
+input AuthGroupPermissionPatch {
+  id: BigInt
+  groupId: Int
+  permissionId: Int
+}
+
+"""
+All input for the `updateAuthGroupPermissionByGroupIdAndPermissionId` mutation.
+"""
+input UpdateAuthGroupPermissionByGroupIdAndPermissionIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `AuthGroupPermission` being updated.
+  """
+  patch: AuthGroupPermissionPatch!
+  groupId: Int!
+  permissionId: Int!
+}
+
+"""The output of our update `AuthPermission` mutation."""
+type UpdateAuthPermissionPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthPermission` that was updated by this mutation."""
+  authPermission: AuthPermission
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `DjangoContentType` that is related to this `AuthPermission`.
+  """
+  contentType: DjangoContentType
+}
+
+"""All input for the `updateAuthPermission` mutation."""
+input UpdateAuthPermissionInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `AuthPermission` being updated.
+  """
+  patch: AuthPermissionPatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `AuthPermission`. Fields that are set will be updated.
+"""
+input AuthPermissionPatch {
+  id: Int
+  name: String
+  contentTypeId: Int
+  codename: String
+}
+
+"""
+All input for the `updateAuthPermissionByContentTypeIdAndCodename` mutation.
+"""
+input UpdateAuthPermissionByContentTypeIdAndCodenameInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `AuthPermission` being updated.
+  """
+  patch: AuthPermissionPatch!
+  contentTypeId: Int!
+  codename: String!
+}
+
+"""The output of our update `AuthUser` mutation."""
+type UpdateAuthUserPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthUser` that was updated by this mutation."""
+  authUser: AuthUser
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updateAuthUser` mutation."""
+input UpdateAuthUserInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `AuthUser` being updated.
+  """
+  patch: AuthUserPatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `AuthUser`. Fields that are set will be updated.
+"""
+input AuthUserPatch {
+  id: Int
+  password: String
+  lastLogin: Datetime
+  isSuperuser: Boolean
+  username: String
+  firstName: String
+  lastName: String
+  email: String
+  isStaff: Boolean
+  isActive: Boolean
+  dateJoined: Datetime
+}
+
+"""All input for the `updateAuthUserByUsername` mutation."""
+input UpdateAuthUserByUsernameInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `AuthUser` being updated.
+  """
+  patch: AuthUserPatch!
+  username: String!
+}
+
+"""The output of our update `AuthUserGroup` mutation."""
+type UpdateAuthUserGroupPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthUserGroup` that was updated by this mutation."""
+  authUserGroup: AuthUserGroup
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `AuthUser` that is related to this `AuthUserGroup`."""
+  user: AuthUser
+
+  """Reads a single `AuthGroup` that is related to this `AuthUserGroup`."""
+  group: AuthGroup
+}
+
+"""All input for the `updateAuthUserGroup` mutation."""
+input UpdateAuthUserGroupInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `AuthUserGroup` being updated.
+  """
+  patch: AuthUserGroupPatch!
+  id: BigInt!
+}
+
+"""
+Represents an update to a `AuthUserGroup`. Fields that are set will be updated.
+"""
+input AuthUserGroupPatch {
+  id: BigInt
+  userId: Int
+  groupId: Int
+}
+
+"""All input for the `updateAuthUserGroupByUserIdAndGroupId` mutation."""
+input UpdateAuthUserGroupByUserIdAndGroupIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `AuthUserGroup` being updated.
+  """
+  patch: AuthUserGroupPatch!
+  userId: Int!
+  groupId: Int!
+}
+
+"""The output of our update `AuthUserUserPermission` mutation."""
+type UpdateAuthUserUserPermissionPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthUserUserPermission` that was updated by this mutation."""
+  authUserUserPermission: AuthUserUserPermission
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `AuthUser` that is related to this `AuthUserUserPermission`.
+  """
+  user: AuthUser
+
+  """
+  Reads a single `AuthPermission` that is related to this `AuthUserUserPermission`.
+  """
+  permission: AuthPermission
+}
+
+"""All input for the `updateAuthUserUserPermission` mutation."""
+input UpdateAuthUserUserPermissionInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `AuthUserUserPermission` being updated.
+  """
+  patch: AuthUserUserPermissionPatch!
+  id: BigInt!
+}
+
+"""
+Represents an update to a `AuthUserUserPermission`. Fields that are set will be updated.
+"""
+input AuthUserUserPermissionPatch {
+  id: BigInt
+  userId: Int
+  permissionId: Int
+}
+
+"""
+All input for the `updateAuthUserUserPermissionByUserIdAndPermissionId` mutation.
+"""
+input UpdateAuthUserUserPermissionByUserIdAndPermissionIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `AuthUserUserPermission` being updated.
+  """
+  patch: AuthUserUserPermissionPatch!
+  userId: Int!
+  permissionId: Int!
+}
+
+"""The output of our update `Category` mutation."""
+type UpdateCategoryPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Category` that was updated by this mutation."""
+  category: Category
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updateCategory` mutation."""
+input UpdateCategoryInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Category` being updated.
+  """
+  patch: CategoryPatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `Category`. Fields that are set will be updated.
+"""
+input CategoryPatch {
+  id: Int
+  name: String
+  lastUpdate: Datetime
+}
+
+"""The output of our update `Customer` mutation."""
+type UpdateCustomerPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Customer` that was updated by this mutation."""
+  customer: Customer
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Employee` that is related to this `Customer`."""
+  supportRep: Employee
+}
+
+"""All input for the `updateCustomer` mutation."""
+input UpdateCustomerInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Customer` being updated.
+  """
+  patch: CustomerPatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `Customer`. Fields that are set will be updated.
+"""
+input CustomerPatch {
+  id: Int
+  firstName: String
+  lastName: String
+  company: String
+  address: String
+  city: String
+  state: String
+  country: String
+  postalCode: String
+  phone: String
+  fax: String
+  email: String
+  supportRepId: Int
+}
+
+"""The output of our update `DjangoContentType` mutation."""
+type UpdateDjangoContentTypePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `DjangoContentType` that was updated by this mutation."""
+  djangoContentType: DjangoContentType
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updateDjangoContentType` mutation."""
+input UpdateDjangoContentTypeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `DjangoContentType` being updated.
+  """
+  patch: DjangoContentTypePatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `DjangoContentType`. Fields that are set will be updated.
+"""
+input DjangoContentTypePatch {
+  id: Int
+  appLabel: String
+  model: String
+}
+
+"""
+All input for the `updateDjangoContentTypeByAppLabelAndModel` mutation.
+"""
+input UpdateDjangoContentTypeByAppLabelAndModelInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `DjangoContentType` being updated.
+  """
+  patch: DjangoContentTypePatch!
+  appLabel: String!
+  model: String!
+}
+
+"""The output of our update `DjangoMigration` mutation."""
+type UpdateDjangoMigrationPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `DjangoMigration` that was updated by this mutation."""
+  djangoMigration: DjangoMigration
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updateDjangoMigration` mutation."""
+input UpdateDjangoMigrationInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `DjangoMigration` being updated.
+  """
+  patch: DjangoMigrationPatch!
+  id: BigInt!
+}
+
+"""
+Represents an update to a `DjangoMigration`. Fields that are set will be updated.
+"""
+input DjangoMigrationPatch {
+  id: BigInt
+  app: String
+  name: String
+  applied: Datetime
+}
+
+"""The output of our update `Employee` mutation."""
+type UpdateEmployeePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Employee` that was updated by this mutation."""
+  employee: Employee
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Employee` that is related to this `Employee`."""
+  employeeByReportsTo: Employee
+}
+
+"""All input for the `updateEmployee` mutation."""
+input UpdateEmployeeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Employee` being updated.
+  """
+  patch: EmployeePatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `Employee`. Fields that are set will be updated.
+"""
+input EmployeePatch {
+  id: Int
+  lastName: String
+  firstName: String
+  title: String
+  reportsTo: Int
+  birthDate: Datetime
+  hireDate: Datetime
+  address: String
+  city: String
+  state: String
+  country: String
+  postalCode: String
+  phone: String
+  fax: String
+  email: String
+}
+
+"""The output of our update `FilmActor` mutation."""
+type UpdateFilmActorPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `FilmActor` that was updated by this mutation."""
+  filmActor: FilmActor
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updateFilmActor` mutation."""
+input UpdateFilmActorInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `FilmActor` being updated.
+  """
+  patch: FilmActorPatch!
+  actorId: Int!
+  filmId: Int!
+}
+
+"""
+Represents an update to a `FilmActor`. Fields that are set will be updated.
+"""
+input FilmActorPatch {
+  actorId: Int
+  filmId: Int
+  lastUpdate: Datetime
+}
+
+"""The output of our update `Film` mutation."""
+type UpdateFilmPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Film` that was updated by this mutation."""
+  film: Film
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updateFilm` mutation."""
+input UpdateFilmInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Film` being updated.
+  """
+  patch: FilmPatch!
+  id: Int!
+}
+
+"""Represents an update to a `Film`. Fields that are set will be updated."""
+input FilmPatch {
+  id: Int
+  title: String
+  description: String
+  releaseYear: Int
+  languageId: Int
+  rentalDuration: Int
+  rentalRate: BigFloat
+  length: Int
+  replacementCost: BigFloat
+  rating: String
+  lastUpdate: Datetime
+  specialFeatures: [String]
+  fulltext: String
+}
+
+"""The output of our update `Genre` mutation."""
+type UpdateGenrePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Genre` that was updated by this mutation."""
+  genre: Genre
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updateGenre` mutation."""
+input UpdateGenreInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Genre` being updated.
+  """
+  patch: GenrePatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `Genre`. Fields that are set will be updated.
+"""
+input GenrePatch {
+  id: Int
+  name: String
+}
+
+"""The output of our update `InvoiceLine` mutation."""
+type UpdateInvoiceLinePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `InvoiceLine` that was updated by this mutation."""
+  invoiceLine: InvoiceLine
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Invoice` that is related to this `InvoiceLine`."""
+  invoice: Invoice
+
+  """Reads a single `Track` that is related to this `InvoiceLine`."""
+  track: Track
+}
+
+"""All input for the `updateInvoiceLine` mutation."""
+input UpdateInvoiceLineInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `InvoiceLine` being updated.
+  """
+  patch: InvoiceLinePatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `InvoiceLine`. Fields that are set will be updated.
+"""
+input InvoiceLinePatch {
+  id: Int
+  invoiceId: Int
+  trackId: Int
+  unitPrice: BigFloat
+  quantity: Int
+}
+
+"""The output of our update `Invoice` mutation."""
+type UpdateInvoicePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Invoice` that was updated by this mutation."""
+  invoice: Invoice
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Customer` that is related to this `Invoice`."""
+  customer: Customer
+}
+
+"""All input for the `updateInvoice` mutation."""
+input UpdateInvoiceInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Invoice` being updated.
+  """
+  patch: InvoicePatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `Invoice`. Fields that are set will be updated.
+"""
+input InvoicePatch {
+  id: Int
+  customerId: Int
+  invoiceDate: Datetime
+  billingAddress: String
+  billingCity: String
+  billingState: String
+  billingCountry: String
+  billingPostalCode: String
+  total: BigFloat
+}
+
+"""The output of our update `MediaType` mutation."""
+type UpdateMediaTypePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `MediaType` that was updated by this mutation."""
+  mediaType: MediaType
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updateMediaType` mutation."""
+input UpdateMediaTypeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `MediaType` being updated.
+  """
+  patch: MediaTypePatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `MediaType`. Fields that are set will be updated.
+"""
+input MediaTypePatch {
+  id: Int
+  name: String
+}
+
+"""The output of our update `PlaylistTrack` mutation."""
+type UpdatePlaylistTrackPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `PlaylistTrack` that was updated by this mutation."""
+  playlistTrack: PlaylistTrack
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Playlist` that is related to this `PlaylistTrack`."""
+  playlist: Playlist
+
+  """Reads a single `Track` that is related to this `PlaylistTrack`."""
+  track: Track
+}
+
+"""All input for the `updatePlaylistTrack` mutation."""
+input UpdatePlaylistTrackInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `PlaylistTrack` being updated.
+  """
+  patch: PlaylistTrackPatch!
+  playlistId: Int!
+  trackId: Int!
+}
+
+"""
+Represents an update to a `PlaylistTrack`. Fields that are set will be updated.
+"""
+input PlaylistTrackPatch {
+  playlistId: Int
+  trackId: Int
+}
+
+"""The output of our update `Playlist` mutation."""
+type UpdatePlaylistPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Playlist` that was updated by this mutation."""
+  playlist: Playlist
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `updatePlaylist` mutation."""
+input UpdatePlaylistInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Playlist` being updated.
+  """
+  patch: PlaylistPatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `Playlist`. Fields that are set will be updated.
+"""
+input PlaylistPatch {
+  id: Int
+  name: String
+}
+
+"""The output of our update `Track` mutation."""
+type UpdateTrackPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Track` that was updated by this mutation."""
+  track: Track
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Album` that is related to this `Track`."""
+  album: Album
+
+  """Reads a single `MediaType` that is related to this `Track`."""
+  mediaType: MediaType
+
+  """Reads a single `Genre` that is related to this `Track`."""
+  genre: Genre
+}
+
+"""All input for the `updateTrack` mutation."""
+input UpdateTrackInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Track` being updated.
+  """
+  patch: TrackPatch!
+  id: Int!
+}
+
+"""
+Represents an update to a `Track`. Fields that are set will be updated.
+"""
+input TrackPatch {
+  id: Int
+  name: String
+  albumId: Int
+  mediaTypeId: Int
+  genreId: Int
+  composer: String
+  milliseconds: Int
+  bytes: Int
+  unitPrice: BigFloat
+}
+
+"""The output of our delete `Actor` mutation."""
+type DeleteActorPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Actor` that was deleted by this mutation."""
+  actor: Actor
+  deletedActorNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deleteActor` mutation."""
+input DeleteActorInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Album` mutation."""
+type DeleteAlbumPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Album` that was deleted by this mutation."""
+  album: Album
+  deletedAlbumNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Artist` that is related to this `Album`."""
+  artist: Artist
+}
+
+"""All input for the `deleteAlbum` mutation."""
+input DeleteAlbumInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Artist` mutation."""
+type DeleteArtistPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Artist` that was deleted by this mutation."""
+  artist: Artist
+  deletedArtistNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deleteArtist` mutation."""
+input DeleteArtistInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `AuthGroup` mutation."""
+type DeleteAuthGroupPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthGroup` that was deleted by this mutation."""
+  authGroup: AuthGroup
+  deletedAuthGroupNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deleteAuthGroup` mutation."""
+input DeleteAuthGroupInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""All input for the `deleteAuthGroupByName` mutation."""
+input DeleteAuthGroupByNameInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  name: String!
+}
+
+"""The output of our delete `AuthGroupPermission` mutation."""
+type DeleteAuthGroupPermissionPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthGroupPermission` that was deleted by this mutation."""
+  authGroupPermission: AuthGroupPermission
+  deletedAuthGroupPermissionNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `AuthGroup` that is related to this `AuthGroupPermission`.
+  """
+  group: AuthGroup
+
+  """
+  Reads a single `AuthPermission` that is related to this `AuthGroupPermission`.
+  """
+  permission: AuthPermission
+}
+
+"""All input for the `deleteAuthGroupPermission` mutation."""
+input DeleteAuthGroupPermissionInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: BigInt!
+}
+
+"""
+All input for the `deleteAuthGroupPermissionByGroupIdAndPermissionId` mutation.
+"""
+input DeleteAuthGroupPermissionByGroupIdAndPermissionIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  groupId: Int!
+  permissionId: Int!
+}
+
+"""The output of our delete `AuthPermission` mutation."""
+type DeleteAuthPermissionPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthPermission` that was deleted by this mutation."""
+  authPermission: AuthPermission
+  deletedAuthPermissionNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `DjangoContentType` that is related to this `AuthPermission`.
+  """
+  contentType: DjangoContentType
+}
+
+"""All input for the `deleteAuthPermission` mutation."""
+input DeleteAuthPermissionInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""
+All input for the `deleteAuthPermissionByContentTypeIdAndCodename` mutation.
+"""
+input DeleteAuthPermissionByContentTypeIdAndCodenameInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  contentTypeId: Int!
+  codename: String!
+}
+
+"""The output of our delete `AuthUser` mutation."""
+type DeleteAuthUserPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthUser` that was deleted by this mutation."""
+  authUser: AuthUser
+  deletedAuthUserNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deleteAuthUser` mutation."""
+input DeleteAuthUserInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""All input for the `deleteAuthUserByUsername` mutation."""
+input DeleteAuthUserByUsernameInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  username: String!
+}
+
+"""The output of our delete `AuthUserGroup` mutation."""
+type DeleteAuthUserGroupPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthUserGroup` that was deleted by this mutation."""
+  authUserGroup: AuthUserGroup
+  deletedAuthUserGroupNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `AuthUser` that is related to this `AuthUserGroup`."""
+  user: AuthUser
+
+  """Reads a single `AuthGroup` that is related to this `AuthUserGroup`."""
+  group: AuthGroup
+}
+
+"""All input for the `deleteAuthUserGroup` mutation."""
+input DeleteAuthUserGroupInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: BigInt!
+}
+
+"""All input for the `deleteAuthUserGroupByUserIdAndGroupId` mutation."""
+input DeleteAuthUserGroupByUserIdAndGroupIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  userId: Int!
+  groupId: Int!
+}
+
+"""The output of our delete `AuthUserUserPermission` mutation."""
+type DeleteAuthUserUserPermissionPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `AuthUserUserPermission` that was deleted by this mutation."""
+  authUserUserPermission: AuthUserUserPermission
+  deletedAuthUserUserPermissionNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `AuthUser` that is related to this `AuthUserUserPermission`.
+  """
+  user: AuthUser
+
+  """
+  Reads a single `AuthPermission` that is related to this `AuthUserUserPermission`.
+  """
+  permission: AuthPermission
+}
+
+"""All input for the `deleteAuthUserUserPermission` mutation."""
+input DeleteAuthUserUserPermissionInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: BigInt!
+}
+
+"""
+All input for the `deleteAuthUserUserPermissionByUserIdAndPermissionId` mutation.
+"""
+input DeleteAuthUserUserPermissionByUserIdAndPermissionIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  userId: Int!
+  permissionId: Int!
+}
+
+"""The output of our delete `Category` mutation."""
+type DeleteCategoryPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Category` that was deleted by this mutation."""
+  category: Category
+  deletedCategoryNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deleteCategory` mutation."""
+input DeleteCategoryInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Customer` mutation."""
+type DeleteCustomerPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Customer` that was deleted by this mutation."""
+  customer: Customer
+  deletedCustomerNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Employee` that is related to this `Customer`."""
+  supportRep: Employee
+}
+
+"""All input for the `deleteCustomer` mutation."""
+input DeleteCustomerInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `DjangoContentType` mutation."""
+type DeleteDjangoContentTypePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `DjangoContentType` that was deleted by this mutation."""
+  djangoContentType: DjangoContentType
+  deletedDjangoContentTypeNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deleteDjangoContentType` mutation."""
+input DeleteDjangoContentTypeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""
+All input for the `deleteDjangoContentTypeByAppLabelAndModel` mutation.
+"""
+input DeleteDjangoContentTypeByAppLabelAndModelInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  appLabel: String!
+  model: String!
+}
+
+"""The output of our delete `DjangoMigration` mutation."""
+type DeleteDjangoMigrationPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `DjangoMigration` that was deleted by this mutation."""
+  djangoMigration: DjangoMigration
+  deletedDjangoMigrationNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deleteDjangoMigration` mutation."""
+input DeleteDjangoMigrationInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: BigInt!
+}
+
+"""The output of our delete `Employee` mutation."""
+type DeleteEmployeePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Employee` that was deleted by this mutation."""
+  employee: Employee
+  deletedEmployeeNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Employee` that is related to this `Employee`."""
+  employeeByReportsTo: Employee
+}
+
+"""All input for the `deleteEmployee` mutation."""
+input DeleteEmployeeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `FilmActor` mutation."""
+type DeleteFilmActorPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `FilmActor` that was deleted by this mutation."""
+  filmActor: FilmActor
+  deletedFilmActorNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deleteFilmActor` mutation."""
+input DeleteFilmActorInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  actorId: Int!
+  filmId: Int!
+}
+
+"""The output of our delete `Film` mutation."""
+type DeleteFilmPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Film` that was deleted by this mutation."""
+  film: Film
+  deletedFilmNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deleteFilm` mutation."""
+input DeleteFilmInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Genre` mutation."""
+type DeleteGenrePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Genre` that was deleted by this mutation."""
+  genre: Genre
+  deletedGenreNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deleteGenre` mutation."""
+input DeleteGenreInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `InvoiceLine` mutation."""
+type DeleteInvoiceLinePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `InvoiceLine` that was deleted by this mutation."""
+  invoiceLine: InvoiceLine
+  deletedInvoiceLineNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Invoice` that is related to this `InvoiceLine`."""
+  invoice: Invoice
+
+  """Reads a single `Track` that is related to this `InvoiceLine`."""
+  track: Track
+}
+
+"""All input for the `deleteInvoiceLine` mutation."""
+input DeleteInvoiceLineInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Invoice` mutation."""
+type DeleteInvoicePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Invoice` that was deleted by this mutation."""
+  invoice: Invoice
+  deletedInvoiceNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Customer` that is related to this `Invoice`."""
+  customer: Customer
+}
+
+"""All input for the `deleteInvoice` mutation."""
+input DeleteInvoiceInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `MediaType` mutation."""
+type DeleteMediaTypePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `MediaType` that was deleted by this mutation."""
+  mediaType: MediaType
+  deletedMediaTypeNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deleteMediaType` mutation."""
+input DeleteMediaTypeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `PlaylistTrack` mutation."""
+type DeletePlaylistTrackPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `PlaylistTrack` that was deleted by this mutation."""
+  playlistTrack: PlaylistTrack
+  deletedPlaylistTrackNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Playlist` that is related to this `PlaylistTrack`."""
+  playlist: Playlist
+
+  """Reads a single `Track` that is related to this `PlaylistTrack`."""
+  track: Track
+}
+
+"""All input for the `deletePlaylistTrack` mutation."""
+input DeletePlaylistTrackInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  playlistId: Int!
+  trackId: Int!
+}
+
+"""The output of our delete `Playlist` mutation."""
+type DeletePlaylistPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Playlist` that was deleted by this mutation."""
+  playlist: Playlist
+  deletedPlaylistNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `deletePlaylist` mutation."""
+input DeletePlaylistInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}
+
+"""The output of our delete `Track` mutation."""
+type DeleteTrackPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Track` that was deleted by this mutation."""
+  track: Track
+  deletedTrackNodeId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Album` that is related to this `Track`."""
+  album: Album
+
+  """Reads a single `MediaType` that is related to this `Track`."""
+  mediaType: MediaType
+
+  """Reads a single `Genre` that is related to this `Track`."""
+  genre: Genre
+}
+
+"""All input for the `deleteTrack` mutation."""
+input DeleteTrackInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: Int!
+}

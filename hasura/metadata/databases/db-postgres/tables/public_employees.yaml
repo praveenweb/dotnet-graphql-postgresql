@@ -1,0 +1,22 @@
+table:
+  name: employees
+  schema: public
+object_relationships:
+- name: employee
+  using:
+    foreign_key_constraint_on: reports_to
+array_relationships:
+- name: customers
+  using:
+    foreign_key_constraint_on:
+      column: support_rep_id
+      table:
+        name: customers
+        schema: public
+- name: employees
+  using:
+    foreign_key_constraint_on:
+      column: reports_to
+      table:
+        name: employees
+        schema: public

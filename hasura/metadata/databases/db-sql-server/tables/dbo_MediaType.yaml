@@ -1,0 +1,11 @@
+table:
+  name: MediaType
+  schema: dbo
+array_relationships:
+- name: Tracks
+  using:
+    foreign_key_constraint_on:
+      column: MediaTypeId
+      table:
+        name: Track
+        schema: dbo
